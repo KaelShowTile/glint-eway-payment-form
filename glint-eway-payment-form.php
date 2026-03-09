@@ -104,15 +104,17 @@ class Eway_Quick_Pay {
         ?>
         <div id="eqp-form-wrapper">
             <form id="eqp-payment-form">
-                <div class="eqp-field">
-                    <label for="eqp_invoice">Invoice Number *</label>
-                    <input type="text" id="eqp_invoice" name="invoice" required>
+                <div class="eqp-row two-col">
+                    <div class="eqp-field">
+                        <label for="eqp_invoice">Invoice Number/Reference *</label>
+                        <input type="text" id="eqp_invoice" name="invoice" required>
+                    </div>
+                    <div class="eqp-field">
+                        <label for="eqp_amount">Payment Amount ($) *</label>
+                        <input type="number" id="eqp_amount" name="amount" step="0.01" min="0.01" required>
+                    </div>
                 </div>
-                <div class="eqp-field">
-                    <label for="eqp_amount">Payment Amount ($) *</label>
-                    <input type="number" id="eqp_amount" name="amount" step="0.01" min="0.01" required>
-                </div>
-                <div class="eqp-row">
+                <div class="eqp-row two-col">
                     <div class="eqp-field">
                         <label for="eqp_first_name">First Name</label>
                         <input type="text" id="eqp_first_name" name="first_name">
@@ -122,13 +124,15 @@ class Eway_Quick_Pay {
                         <input type="text" id="eqp_last_name" name="last_name">
                     </div>
                 </div>
-                <div class="eqp-field">
-                    <label for="eqp_email">Email</label>
-                    <input type="email" id="eqp_email" name="email">
-                </div>
-                <div class="eqp-field">
-                    <label for="eqp_phone">Phone</label>
-                    <input type="text" id="eqp_phone" name="phone">
+                <div class="eqp-row two-col">
+                    <div class="eqp-field">
+                        <label for="eqp_email">Email</label>
+                        <input type="email" id="eqp_email" name="email">
+                    </div>
+                    <div class="eqp-field">
+                        <label for="eqp_phone">Phone</label>
+                        <input type="text" id="eqp_phone" name="phone">
+                    </div>
                 </div>
                 <div class="eqp-field">
                     <label for="eqp_address">Billing Address</label>
@@ -142,17 +146,6 @@ class Eway_Quick_Pay {
             </form>
         </div>
         
-        <style>
-            #eqp-form-wrapper { max-width: 500px; margin: 20px 0; }
-            .eqp-field { margin-bottom: 15px; }
-            .eqp-field label { display: block; margin-bottom: 5px; font-weight: bold; }
-            .eqp-field input { width: 100%; padding: 8px; }
-            .eqp-row { display: flex; gap: 10px; }
-            .eqp-row .eqp-field { flex: 1; }
-            #eqp-message { margin-top: 15px; color: #d63638; }
-            #eqp-submit-btn { padding: 10px 20px; cursor: pointer; }
-            #eqp-submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
-        </style>
         <?php
         return ob_get_clean();
     }
