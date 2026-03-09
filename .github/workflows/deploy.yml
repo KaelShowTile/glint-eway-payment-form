@@ -1,0 +1,43 @@
+# GitHub Action for deploying a WordPress theme/plugin to shared hosting via FTP
+
+name: 🚀 Deploy WordPress Code
+
+on:
+  # Triggers the workflow on push events to the "main" branch
+  push:
+    branches:
+      - main
+
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v4 # Checks out your repository's code
+
+    - name: 📂 Sync files to server
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        # These pull the secrets you just created
+        server: ${{ secrets.ST_FTP_SERVER }}
+        username: ${{ secrets.ST_FTP_USERNAME }}
+        password: ${{ secrets.ST_FTP_PASSWORD }}
+
+        # This is the path on your *server* where the code should go.
+        # --- IMPORTANT ---
+        # Update this path to your specific theme or plugin folder.
+        #
+        # Example for a theme named "my-theme":
+        # server-dir: /public_html/wp-content/themes/my-theme/
+        #
+        # Example for a plugin named "my-plugin":
+        # server-dir: /public_html/wp-content/plugins/my-plugin/
+        
+        server-dir: /public_html/wp-content/plugins/glint-eway-payment-form/
+
+        # Optional: uncomment to exclude files
+        # exclude: |
+        #   **/.git*
+        #   **/.git*/**
+        #   README.md
