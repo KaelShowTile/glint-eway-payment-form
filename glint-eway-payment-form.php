@@ -116,22 +116,22 @@ class Eway_Quick_Pay {
                 </div>
                 <div class="eqp-row two-col">
                     <div class="eqp-field">
-                        <label for="eqp_first_name">First Name</label>
-                        <input type="text" id="eqp_first_name" name="first_name">
+                        <label for="eqp_first_name">First Name *</label>
+                        <input type="text" id="eqp_first_name" name="first_name" required>
                     </div>
                     <div class="eqp-field">
-                        <label for="eqp_last_name">Last Name</label>
-                        <input type="text" id="eqp_last_name" name="last_name">
+                        <label for="eqp_last_name">Last Name *</label>
+                        <input type="text" id="eqp_last_name" name="last_name" required>
                     </div>
                 </div>
                 <div class="eqp-row two-col">
                     <div class="eqp-field">
-                        <label for="eqp_email">Email</label>
-                        <input type="email" id="eqp_email" name="email">
+                        <label for="eqp_email">Email *</label>
+                        <input type="email" id="eqp_email" name="email" required>
                     </div>
                     <div class="eqp-field">
-                        <label for="eqp_phone">Phone</label>
-                        <input type="text" id="eqp_phone" name="phone">
+                        <label for="eqp_phone">Phone *</label>
+                        <input type="text" id="eqp_phone" name="phone" required>
                     </div>
                 </div>
                 <div class="eqp-field">
